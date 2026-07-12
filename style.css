@@ -1,0 +1,135 @@
+/* ==========================================================================
+   PALETA DE COLORES (Tu amigo puede cambiar estos códigos para personalizarlo)
+   ========================================================================== */
+:root {
+    --color-fondo-pantalla: #eef2f3; /* Color del fondo de toda la página */
+    --color-tarjeta: #ffffff;        /* Color del fondo del cuadro central */
+    --color-texto-principal: #333333;/* Color de las letras del nombre */
+    --color-texto-secundario: #666666;/* Color de la biografía */
+    --color-boton-fondo: #4f46e5;    /* Color de fondo de los botones */
+    --color-boton-texto: #ffffff;    /* Color del texto dentro de los botones */
+    --color-boton-hover: #4338ca;    /* Color del botón cuando pasas el cursor */
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo-pantalla);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   DISEÑO DE LA TARJETA
+   ========================================================================== */
+.card {
+    background-color: var(--color-tarjeta);
+    width: 100%;
+    /* Aumentamos el ancho máximo para acomodar las dos columnas */
+    max-width: 650px; /* <--- AUMENTA ESTE VALOR (ej. 650px o más) */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Mantiene la cabecera centrada */
+}
+
+.profile-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--color-boton-fondo);
+}
+
+/* Textos */
+.name {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    color: var(--color-texto-principal);
+    margin-bottom: 8px;
+}
+
+.title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   DISEÑO DE LOS BOTONES
+   ========================================================================== */
+.card-body {
+    display: flex;
+    flex-direction: row; /* <--- Pone las columnas una al lado de la otra */
+    gap: 30px; /* <--- Espacio de separación entre columnas */
+    align-items: flex-start; /* <--- Alinea el contenido arriba */
+    margin-top: 25px; /* <--- Separa el body de la cabecera */
+    text-align: left; /* El contenido dentro de las columnas se alinea a la izq */
+}
+
+/* 2. Definimos cómo se reparten el espacio las columnas */
+.column-left {
+    flex: 1; /* <--- Toma la mitad del espacio disponible */
+}
+
+.column-right {
+    flex: 1; /* <--- Toma la otra mitad del espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro de su columna */
+}
+
+/* Ajustamos el contenedor de enlaces para alinearlo a la izquierda */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-btn1 {
+    display: block;
+    background-color: var(--color-boton-fondo);
+    color: var(--color-boton-texto);
+    padding: 14px;
+    text-decoration: none; /* Quita la línea subrayada del enlace */
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+
+/* Efecto visual cuando el mouse pasa por encima del botón */
+.link-btn:hover {
+    background-color: var(--color-boton-hover);
+    transform: translateY(-2px); /* Eleva el botón ligeramente */
+}
+
+.feature-img {
+    width: 100%; /* La imagen ocupa el ancho de su columna */
+    max-width: 280px; /* <--- Límite de seguridad para que no crezca demasiado */
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
